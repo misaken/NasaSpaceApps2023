@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +8,44 @@
 </head>
 <body>
     <h1>Hello World</h1>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>音声認識</title>
+</head>
+<body>
+    <h1>音声認識</h1>
+    <input type="file" accept="audio/*" id="audioInput" />
+    <button id="startButton">音声入力開始</button>
+    <div id="output"></div>
+    <script>
+        const startButton = document.getElementById('startButton');
+        const audioInput = document.getElementById('audioInput');
+        const output = document.getElementById('output');
+
+        startButton.addEventListener('click', () => {
+            const audioFile = audioInput.files[0];
+            if (audioFile) {
+                const formData = new FormData();
+                formData.append('audio', audioFile);
+
+                fetch('/recognize', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    output.textContent = data.text;
+                })
+                .catch(error => {
+                    console.error('エラー:', error);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
