@@ -20,7 +20,7 @@ def get_NasaData(text):
     # NASAオープンデータからデータ取得
     url = "https://data.nasa.gov/"
     options = Options()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
 
     browser = webdriver.Chrome(options = options)
     browser.set_page_load_timeout(60)
