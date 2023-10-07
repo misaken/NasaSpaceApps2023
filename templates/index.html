@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="sorafavico.ico" id="favicon">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Nasa Space Apps</title>
+</head>
+
+<body>
+    <div class="header">
+        <!-- <div class="logo">      
+            <p>”宇宙”検索アシスタント</p>
+        </div> -->
+    </div>
+    
+    <div class="input-question">
+        <label>           
+            <form action="/search", method="post">
+             質問：
+                <input type="text" id="question" size="100" value="何を尋ねますか？" name="input">
+                <input type="submit" value="search">
+            </form>
+        </label>
+    </div>
+
+    <div class="video-wrap">
+        <!-- <p>動画の上に文字を重ねられるよ</p> -->
+        
+        <div class="balloon1-top">
+            {% if dic %}
+                <ul>
+                {% for key, value in dic.items() %}
+                    <a href={{value}}> {{key}} </a>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>ふきだし</p>
+            {% endif %}
+            <!--
+            <p>ふきだし</p>
+            <script src="static/javascript/answer.js"></script>-->
+        </div>
+        
+        <video src="static/video/SORA1.mp4" loop autoplay muted></video>
+
+        <!-- <img src="img/S__11321365.jpg"></img> -->
+    </div>
+
+
+    <!-- <h1>テストサイト</h1> 
+    <h2>NASA_SPACE_APPS</h2> 
+    <script src="test.js">
+    </script> -->
+
+    <footer>
+        <p>created by team KOB</p>
+    </footer>
+    
+</body>
+
+</html>
+

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+body{
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", "sans-serif";
+    font-size: 16px;
+    color: white;
+
+    background-color: black;            /* 背景色 */
+    background-image: url("../img/PIA09653~medium.jpg"); /* 画像 */
+    background-size: cover;               /* 全画面 */
+    background-attachment: fixed;         /* 固定 */
+    background-position: center center;   /* 縦横中央 */
+
+    overflow-x: hidden;
+}
+.logo{
+    text-align: center;
+}
+.logo p{
+    font-family: "HGP創英角ｺﾞｼｯｸUB", "Hiragino Kaku Gothic Pro", "Meiryo";
+    font-size: 1.5vw;
+}
+.logo img{
+    width: 15vw;
+}
+.header{
+    z-index: 20;
+    position: relative;
+
+    width: 600px;
+    text-align: center;
+    /*上下のマージンが0、左右がオート*/
+    margin: 0 auto;
+}
+
+.input-question{
+    font-size: 200%;
+}
+
+.video-wrap{
+    position: relative;
+}
+.video-wrap video{
+    min-width: 100%;
+}
+.video-wrap img{
+    min-width: 100%;
+}
+/* .video-wrap p{ */
+    /* font-family: serif;           */
+    /* color: #fff; */
+    /* font-size: 400%; */
+    /* position: absolute; */
+    /* left: 30%; */
+    /* top: 200px; */
+    /* z-index: 1; */
+/* } */
+
+
+.balloon1-top {
+    position: absolute;
+    display: inline-block;
+    margin: 1em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e4de31;
+
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+  
+.balloon1-top:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #e4de31;
+}
+  
+.balloon1-top p {
+    /* position: absolute; */
+    margin: 0;
+    padding: 0;
+    font-size: 400%;
+}
+
+
+footer{
+    z-index: 10;
+
+    width: 99vw;
+    /* background-color: #346e84; */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+
+    /* position: absolute; ←絶対位置 */
+    bottom: 0; /*下に固定*/
+}
+
+/* .header ul{
+    display: flex;
+}
+.header ul li{
+    width: 200px;
+    text-align: center;
+    border-right: 2px solid pink;
+}
+.header ul li:first-child{
+    border-left: 2px solid pink;
+}
+.header ul li a{
+    display: block;
+} */
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style-type: none;
+}
+/* .header_img{
+    text-align: center;
+}
+.header_img img{
+    width: 70vw;
+} */
+/* .container_movies h2{
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+}
+.container_movies{
+    width: 1500px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.ttl{
+    font-weight: 500;
+    text-align: center;
+}
+.movies_block{
+    display: flex;
+    justify-content: space-between;
+} */
