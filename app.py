@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 #import speech_recognition as sr
 #from gtts import gTTS
 import tempfile
+from dotenv import load_dotenv
 import os
 #import openai
 from janome.tokenizer import Tokenizer
@@ -12,7 +13,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-Deepl_API_KEY = "009c5eee-3137-eead-88b3-667aa463c7d6:fx"
+load_dotenv() # .envファイルを環境変数に設定
+OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+#Deepl_API_KEY = "009c5eee-3137-eead-88b3-667aa463c7d6:fx"
+
+
 
 app = Flask(__name__)
 
@@ -69,7 +75,7 @@ def translator(text, to_en=True):
         # 無料版のURL
         "https://api-free.deepl.com/v2/translate",
         params={ 
-            "auth_key": Deepl_API_KEY,
+            "auth_key": DEEPL_API_KEY,
             "target_lang": target_lang,
             "text": text,
         },
