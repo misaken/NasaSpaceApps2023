@@ -1,4 +1,17 @@
 # SORA Information
+We can easily access data with SORA!
+By asking SORA, we can…
+
+Get lots of data by only accessing one website 
+and can see them all at once.
+
+Get information more easily because Sora will 
+guess what we want.
+
+Access the site more easily because of its 
+friendly character, sora, and simple UI
+
+SORA introduces data friendly!
 
 ## HOW TO USE 
 1. Fork this repository.
