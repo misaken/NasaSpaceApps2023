@@ -30,14 +30,18 @@
         <!-- <p>動画の上に文字を重ねられるよ</p> -->
         
         <div class="balloon1-top">
+            <p>検索結果</p>
             {% if dic %}
+                <p>(関連ワード : {{dic[0]}})</p><br>
                 <ul>
-                {% for key, value in dic.items() %}
-                    <a href={{value}}> {{key}} </a>
+                {% for key, value in dic[1].items() %}
+                ○：   
+                <a href={{value}}> {{key}} </a>
+                <br>
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>ふきだし</p>
+                <p>----------</p>
             {% endif %}
             <!--
             <p>ふきだし</p>

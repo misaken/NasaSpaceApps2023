@@ -3,10 +3,11 @@ import requests
 from bs4 import BeautifulSoup
 #import speech_recognition as sr
 #from gtts import gTTS
+import gensim
 import tempfile
 from dotenv import load_dotenv
 import os
-#import openai
+import openai
 from janome.tokenizer import Tokenizer
 import time
 from selenium import webdriver
@@ -26,7 +27,7 @@ def get_NasaData(text):
     # NASAオープンデータからデータ取得
     url = "https://data.nasa.gov/"
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
 
     browser = webdriver.Chrome(options = options)
     browser.set_page_load_timeout(60)
@@ -84,6 +85,15 @@ def translator(text, to_en=True):
     translated_text = result.json()["translations"][0]["text"]
     return translated_text
 
+# 関連ワードをword2vecを用いて取得
+def get_similar_word(word_list):
+    similar_word_list = []
+    model = gensim.models.Word2Vec.load('./word2vec.gensim.model')
+    for word in word_list:
+        for w, s  in model.wv.most_similar(word, topn=1):
+            #print(w, s)
+            similar_word_list.append(w)
+    return similar_word_list
 
 """
 #音声認識
@@ -124,14 +134,21 @@ def index():
 def search_data():
     text = request.form["input"]
     n_list = get_n(text) # 名詞のみ抽出
+    print(n_list)
+    similar_words = get_similar_word(n_list)
+    print(similar_words)
     translated_word = []
-    for word in n_list: # 翻訳
+    use_words = n_list + similar_words
+    print(f"aaaa  {use_words}")
+    for word in use_words: # 翻訳
         translated_word.append(translator(word))
     keywords = " ".join(translated_word)
     searched_dic = get_NasaData(keywords)
     print(searched_dic)
     #return render_template("index.html", arr=searched_list) # 配列の場合
-    return render_template("index.html", dic=searched_dic) # 辞書の場合
+    #return render_template("index.html", dic=searched_dic) # 辞書の場合
+    print([", ".join(use_words),searched_dic])
+    return render_template("index.html", dic=[", ".join(use_words),searched_dic]) # 辞書の場合
 
 @app.route('/result', methods=["GET"])
 def result_get():
