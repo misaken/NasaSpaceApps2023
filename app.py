@@ -148,7 +148,7 @@ def search_data():
     #return render_template("index.html", arr=searched_list) # 配列の場合
     #return render_template("index.html", dic=searched_dic) # 辞書の場合
     print([", ".join(use_words),searched_dic])
-    return render_template("index.html", dic=[", ".join(use_words),searched_dic]) # 辞書の場合
+    return render_template("index.html", dic=[", ".join(similar_words),searched_dic]) # 辞書の場合
 
 @app.route('/result', methods=["GET"])
 def result_get():
