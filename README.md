@@ -1,4 +1,4 @@
-# SORO Information
+# SORA Information
 
 ## HOW TO USE 
 1. Fork this repository.
