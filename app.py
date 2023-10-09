@@ -17,7 +17,6 @@ from selenium.webdriver.chrome.options import Options
 load_dotenv() # .envファイルを環境変数に設定
 OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
-#Deepl_API_KEY = "009c5eee-3137-eead-88b3-667aa463c7d6:fx"
 
 
 
