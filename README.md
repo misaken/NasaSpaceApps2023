@@ -14,7 +14,7 @@ friendly character, sora, and simple UI
 SORA introduces data friendly!
 
 ## HOW TO USE 
-1. Fork this repository.
+1. Pull this repository.
 2. Make your computer dat can run python codes.
 3. If required packages are not available, install them. (pip install package)
 4. Get DeepL API.
