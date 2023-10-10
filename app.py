@@ -26,7 +26,7 @@ def get_NasaData(text):
     # NASAオープンデータからデータ取得
     url = "https://data.nasa.gov/"
     options = Options()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
 
     browser = webdriver.Chrome(options = options)
     browser.set_page_load_timeout(60)
@@ -39,7 +39,7 @@ def get_NasaData(text):
     #index.phpの送信ボタンを自動で押す
     #submit = browser.find_element_by_type("submit")
     search_box.submit()
-    time.sleep(3)
+    #time.sleep(3)
     current_url = browser.current_url
     
     #検索結果一覧を取得
@@ -133,12 +133,12 @@ def index():
 def search_data():
     text = request.form["input"]
     n_list = get_n(text) # 名詞のみ抽出
-    print(n_list)
+    #print(n_list)
     similar_words = get_similar_word(n_list)
-    print(similar_words)
+    #print(similar_words)
     translated_word = []
     use_words = n_list + similar_words
-    print(f"aaaa  {use_words}")
+    #print(f"aaaa  {use_words}")
     for word in use_words: # 翻訳
         translated_word.append(translator(word))
     keywords = " ".join(translated_word)
