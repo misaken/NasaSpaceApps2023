@@ -133,34 +133,14 @@ def index():
 def search_data():
     text = request.form["input"]
     n_list = get_n(text) # 名詞のみ抽出
-    #print(n_list)
     similar_words = get_similar_word(n_list)
-    #print(similar_words)
     translated_word = []
     use_words = n_list + similar_words
-    #print(f"aaaa  {use_words}")
     for word in use_words: # 翻訳
         translated_word.append(translator(word))
     keywords = " ".join(translated_word)
     searched_dic = get_NasaData(keywords)
-    print(searched_dic)
-    #return render_template("index.html", arr=searched_list) # 配列の場合
-    #return render_template("index.html", dic=searched_dic) # 辞書の場合
-    print([", ".join(use_words),searched_dic])
     return render_template("index.html", dic=[", ".join(similar_words),searched_dic]) # 辞書の場合
-
-@app.route('/result', methods=["GET"])
-def result_get():
-    # GET送信の処理
-    field = request.args.get("field","")
-    return render_template('result.html', message = "名前は{}です。".format(field))
-
-@app.route('/result', methods=["POST"])
-def result_post():
-    # POST送信の処理
-    field = request.form["field"]
-    print(field)
-    return render_template('result.html', message = "名前は{}です。".format(field))
 
 if __name__ == '__main__':
     app.debug = False
