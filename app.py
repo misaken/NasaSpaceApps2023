@@ -4,18 +4,18 @@ from bs4 import BeautifulSoup
 #import speech_recognition as sr
 #from gtts import gTTS
 import gensim
-import tempfile
+#import tempfile
 from dotenv import load_dotenv
 import os
-import openai
+#import openai
 from janome.tokenizer import Tokenizer
-import time
+#import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 load_dotenv() # .envファイルを環境変数に設定
-OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
+#OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 
 
