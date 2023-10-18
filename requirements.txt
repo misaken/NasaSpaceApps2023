@@ -5,3 +5,4 @@ gensim
 python-dotenv
 janome
 selenium
+requests
