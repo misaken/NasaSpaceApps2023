@@ -1,7 +1,7 @@
 Flask
 Gunicorn
 BeautifulSoup4
-gensim==4.3.2
+gensim==3.8
 python-dotenv
 janome
 selenium
