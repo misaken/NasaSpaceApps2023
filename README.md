@@ -26,7 +26,7 @@ https://expose.sorainformation.net/
 This is a temporary site.
 We are publishing this using the free plans of these services.
 
-・お名前ドットコム : https://www.onamae.com/
+・お名前.com : https://www.onamae.com/
 
 ・Expose : https://expose.dev/
 
