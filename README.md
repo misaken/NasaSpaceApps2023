@@ -19,3 +19,13 @@ SORA introduces data friendly!
 3. If required packages are not available, install them. (pip install package)
 4. Get DeepL API.
 5. Run app.py and access local server.
+
+## DEMO SITE
+https://expose.sorainformation.net/
+
+This is a temporary site.
+We are publishing this using the free plans of these services.
+・お名前ドットコム : https://www.onamae.com/
+・Expose : https://expose.dev/
+
+It takes a few minutes for search results to appear.
