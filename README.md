@@ -23,6 +23,7 @@ SORA introduces data friendly!
 ## DEMO SITE
 https://expose.sorainformation.net/
 
+
 This is a temporary site.
 We are publishing this using the free plans of these services.
 
@@ -36,4 +37,3 @@ So I make it possible by accessing github.io once.
 github.io repository : https://github.com/misaken/to_sorainfo
 
 It takes a few minutes for search results to appear.
-https://expose.sorainformation.net/
